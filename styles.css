@@ -21,6 +21,11 @@ body {
     padding: 0;
 }
 
+strong, b {
+    color: var(--color-text);
+    font-weight: 700;
+}
+
 a {
     color: var(--color-acento);
     text-decoration: none;
@@ -60,7 +65,7 @@ h1, h2, h3 {
     margin-right: 10px;
 }
 
-/* 1. HERO SECTION (ENCABEZADO) */
+/* 1. HERO SECTION */
 .hero {
     background: var(--color-secondary-dark);
     text-align: center;
@@ -75,7 +80,6 @@ h1, h2, h3 {
     border-radius: 50%;
     border: 5px solid var(--color-acento);
     overflow: hidden;
-    /* Sombra del color de acento */
     box-shadow: 0 0 20px rgba(102, 252, 241, 0.6); 
 }
 
@@ -141,7 +145,6 @@ h1, h2, h3 {
 
 .widget-card:hover {
     transform: translateY(-5px);
-    /* Sombra intensa y brillo del color de acento */
     box-shadow: 0 12px 25px rgba(0, 0, 0, 0.6), 0 0 15px rgba(102, 252, 241, 0.5);
 }
 
@@ -314,62 +317,70 @@ h1, h2, h3 {
     color: var(--color-dark);
 }
 
-/* 5. EDUCACIÓN (TIMELINE) */
+/* 5. EDUCACIÓN (TIMELINE) - FORMATO VERTICAL SIMPLE */
 .timeline {
     position: relative;
-    padding: 20px 0;
+    padding: 20px 0 20px 30px; /* Padding a la izquierda para la línea */
     max-width: 800px;
     margin: 0 auto;
 }
 
+/* LA LÍNEA VERTICAL (POSICIÓN: IZQUIERDA) */
 .timeline::before {
     content: '';
     position: absolute;
     top: 0;
     bottom: 0;
-    left: 50%;
+    left: 10px; 
     width: 3px;
-    background-color: var(--color-card);
-    transform: translateX(-50%);
+    background-color: var(--color-secondary-dark); /* Color de la línea */
+    transform: none; 
 }
 
 .timeline-item {
     position: relative;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
+    padding-left: 30px; /* Espacio para el punto y la línea */
 }
 
+/* EL PUNTO CENTRAL (POSICIÓN: IZQUIERDA) */
 .timeline-dot {
     position: absolute;
-    top: 0;
-    left: 50%;
+    top: 5px; 
+    left: 10px; 
     width: 15px;
     height: 15px;
     background-color: var(--color-acento);
     border-radius: 50%;
-    transform: translate(-50%, 0);
+    transform: translateX(-50%); 
     z-index: 10;
 }
 
+/* CONTENIDO DE LA TARJETA (POSICIÓN: SEPARADA DE LA LÍNEA) */
 .timeline-content {
     background-color: var(--color-card);
     padding: 20px;
     border-radius: 8px;
-    width: 45%;
-    position: relative;
+    width: 100%; /* Ocupa todo el ancho disponible */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-}
-
-.timeline-item:nth-child(odd) .timeline-content {
-    left: 0;
-    text-align: right;
-    border-right: 3px solid var(--color-acento);
-}
-
-.timeline-item:nth-child(even) .timeline-content {
-    left: 55%;
+    position: relative;
+    left: 0; 
     text-align: left;
+    margin: 0;
+    /* Borde lateral decorativo que da la ilusión de conexión sin unirse */
+    border-left: 3px solid var(--color-acento); 
+}
+
+/* Aseguramos que no haya reglas de alternancia o margen negativo */
+.timeline-item:nth-child(odd) .timeline-content,
+.timeline-item:nth-child(even) .timeline-content {
+    left: 0;
+    text-align: left;
+    border-right: none;
+    margin: 0;
     border-left: 3px solid var(--color-acento);
 }
+
 
 .timeline-content h3 {
     margin-top: 0;
@@ -405,24 +416,28 @@ footer {
     .about-grid {
         grid-template-columns: 1fr;
     }
+    
+    /* Ajustes para el nuevo Timeline vertical en móvil */
+    .timeline {
+        padding: 20px 0 20px 30px; 
+    }
     .timeline::before {
-        left: 20px;
-        transform: none;
+        left: 10px;
     }
     .timeline-dot {
-        left: 20px;
-        transform: translate(-50%, 0);
+        left: 10px;
     }
     .timeline-content {
-        width: calc(100% - 70px);
-        margin-left: 70px;
+        width: 100%;
+        margin-left: 0; 
+        border-left: 3px solid var(--color-acento);
     }
     .timeline-item:nth-child(odd) .timeline-content,
     .timeline-item:nth-child(even) .timeline-content {
         left: 0;
         text-align: left;
-        border-left: 3px solid var(--color-acento);
         border-right: none;
+        margin: 0;
     }
     .tech-badge {
         display: none; 
