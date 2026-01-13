@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luminari™ | El futuro de tu negocio</title>
+    <link rel="stylesheet" href="stylesTM.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/scrollreveal"></script>
+</head>
+<body>
+
+    <div class="bg-glow"></div>
+
+    <nav class="navbar">
+        <div class="logo">LUMINARI<span>™</span></div>
+        <ul class="nav-links">
+            <li><a href="#propuestas" class="nav-btn-secondary">Qué hacemos</a></li>
+            <li><a href="#" class="btn-primary">Empezar ahora</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1 class="reveal">
+                Creamos sistemas que <br>
+                <span class="gradient-text">piensan y actúan</span> por ti.
+            </h1>
+            <p class="reveal">Diseñamos webs inteligentes y automatizaciones que te devuelven el tiempo que perdiste en tareas repetitivas.</p>
+            
+            <div class="hero-btns reveal">
+                <a href="#propuestas" class="btn-main">Ver Soluciones</a>
+                <a href="#" class="btn-sub">Saber más</a>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="floating-sphere"></div>
+        </div>
+    </header>
+
+    <section id="propuestas" class="features">
+        <div class="card reveal">
+            <div class="card-glow"></div>
+            <div class="icon">🌐</div>
+            <h3>Webs Vivas</h3>
+            <p>No solo una página, sino una herramienta de ventas 24/7 que se adapta a tus clientes.</p>
+        </div>
+        <div class="card reveal">
+            <div class="card-glow"></div>
+            <div class="icon">🤖</div>
+            <h3>Cerebros Digitales</h3>
+            <p>Conectamos tus apps favoritas para que se hablen entre sí sin que tú muevas un dedo.</p>
+        </div>
+        <div class="card reveal">
+            <div class="icon">⚡</div>
+            <h3>Velocidad IA</h3>
+            <p>Implementamos inteligencia artificial para responder clientes y analizar datos en segundos.</p>
+        </div>
+    </section>
+
+    <script>
+        // Configuración de animaciones al hacer scroll
+        ScrollReveal().reveal('.reveal', {
+            distance: '60px',
+            duration: 1200,
+            easing: 'cubic-bezier(0.5, 0, 0, 1)',
+            interval: 200,
+            origin: 'bottom'
+        });
+    </script>
+</body>
+</html>
