@@ -4,7 +4,7 @@
     --primary: #00f2ff;
     --secondary: #7000ff;
     --text-white: #ffffff;
-    --text-dim: #b3b3b3;
+    --text-dim: #cbd5e1;
 }
 
 * {
@@ -154,7 +154,7 @@ h1 {
     50% { transform: translate(-20px, -40px) scale(1.1); }
 }
 
-/* --- CARDS CON EFECTO GLASSMORPHISM PRO Y RESPONSIVE GRID --- */
+/* --- CARDS ACTUALIZADAS CON H3 RESALTANTE --- */
 .features {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -166,7 +166,7 @@ h1 {
 
 .card {
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%);
-    padding: 4rem 2rem;
+    padding: 4rem 2.5rem;
     border-radius: 40px;
     position: relative;
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -175,9 +175,10 @@ h1 {
     cursor: pointer;
     overflow: hidden;
     height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
-/* El resplandor que "sale" de la card al hacer hover */
 .card:hover {
     transform: translateY(-25px) scale(1.05);
     background: linear-gradient(135deg, rgba(112, 0, 255, 0.15) 0%, rgba(0, 242, 255, 0.05) 100%);
@@ -185,57 +186,63 @@ h1 {
     box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8), 0 0 30px rgba(112, 0, 255, 0.3);
 }
 
-/* Animación de luz interna radial */
-.card::after {
-    content: '';
-    position: absolute;
-    top: -50%; left: -50%;
-    width: 200%; height: 200%;
-    background: radial-gradient(circle, rgba(0, 242, 255, 0.1) 0%, transparent 70%);
-    opacity: 0;
-    transition: 0.5s;
-    pointer-events: none;
-}
-
-.card:hover::after {
-    opacity: 1;
-}
-
 .card .icon {
     font-size: 4rem;
     margin-bottom: 2rem;
     display: block;
-    filter: drop-shadow(0 0 15px rgba(255,255,255,0.3));
-    transition: transform 0.4s ease;
+    filter: drop-shadow(0 0 15px rgba(0, 242, 255, 0.5));
 }
 
-.card:hover .icon {
-    transform: scale(1.2) rotate(10deg);
-}
-
+/* --- MEJORA CRÍTICA DEL H3 --- */
 .card h3 {
-    font-size: 1.8rem;
-    margin-bottom: 1.5rem;
-    background: linear-gradient(to bottom, #fff, #888);
+    font-size: 2.2rem;
+    margin-bottom: 1.2rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.5px;
+    
+    /* Gradiente de alto contraste */
+    background: linear-gradient(to right, #ffffff, var(--primary));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-weight: 800;
+    
+    /* Resplandor de neón para que no se pierda */
+    filter: drop-shadow(0 0 8px rgba(0, 242, 255, 0.8));
+    
+    transition: all 0.4s ease;
+}
+
+.card:hover h3 {
+    background: linear-gradient(to right, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    filter: drop-shadow(0 0 15px var(--primary));
+    transform: scale(1.05);
 }
 
 .card p {
     color: var(--text-dim);
     font-size: 1.1rem;
+    font-weight: 500;
+    line-height: 1.5;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+/* --- WIDGET DE CONTACTO --- */
+.card-contact {
+    text-decoration: none;
+    background: linear-gradient(135deg, rgba(112, 0, 255, 0.2) 0%, rgba(3, 3, 3, 0.8) 100%) !important;
+}
+
+.contact-link {
+    margin-top: auto;
+    font-weight: 800;
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding-top: 1rem;
 }
 
 /* --- RESPONSIVE --- */
-@media (max-width: 1024px) {
-    .features { gap: 2rem; padding: 5rem 5%; }
-}
-
 @media (max-width: 768px) {
-    .navbar { padding: 1rem 5%; }
-    .hero { text-align: center; justify-content: center; height: auto; padding: 100px 5% 50px 5%; flex-direction: column; }
-    .hero-btns { flex-direction: column; align-items: center; width: 100%; }
-    .btn-main, .btn-sub { width: 100%; max-width: 300px; }
-    .floating-sphere { width: 200px; height: 200px; top: 10%; right: 10%; }
+    .card h3 { font-size: 1.8rem; }
 }

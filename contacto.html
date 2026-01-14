@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto | Luminari™</title>
+    
+    <link rel="stylesheet" href="stylesTM.css">
+    <link rel="stylesheet" href="contacto.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://unpkg.com/scrollreveal"></script>
+</head>
+<body>
+
+    <div class="bg-glow"></div>
+
+    <nav class="navbar">
+        <div class="logo" onclick="window.location.href='luminariTM.html'" style="cursor:pointer">LUMINARI<span>™</span></div>
+        <ul class="nav-links">
+            <li><a href="luminariTM.html" class="nav-btn-secondary">Inicio</a></li>
+            <li><a href="saber-mas.html" class="nav-btn-secondary">¿Cómo trabajamos?</a></li>
+            <li><a href="planes.html" class="nav-btn-secondary">Nuestros Planes</a></li>
+        </ul>
+    </nav>
+
+    <header class="contact-header">
+        <h1 class="reveal">¿Listo para <span class="gradient-text">Automatizar</span> tu Futuro?</h1>
+        <p class="reveal">Cuéntanos sobre tu proyecto. Estamos aquí para convertir tus ideas en sistemas que trabajan.</p>
+    </header>
+
+    <section class="contact-info-section">
+        <div class="contact-grid">
+            <a href="https://wa.me/+593997073473?text=Hola,%20me%20interesa%20automatizar%20mi%20negocio%20y%20quiero%20más%20información." target="_blank" class="contact-card reveal">                <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
+                <h3>WhatsApp Directo</h3>
+                <p>Envíanos un mensaje y te responderemos en minutos.</p>
+                <span>+593 99 707 3473</span>
+            </a>
+
+            <a href="mailto:scri0962@gmail.com" class="contact-card reveal">
+                <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                <h3>Escríbenos un Correo</h3>
+                <p>Detalla tu proyecto. Te contactaremos con una propuesta.</p>
+                <span>scri0962@gmail.com</span>
+            </a>
+
+            <div class="contact-card reveal">
+                <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                <h3>Ubicación</h3>
+                <p>Atendemos de forma remota para todo el mundo.</p>
+                <span>Global / Remoto</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-form-section">
+        <div class="form-container-card reveal">
+            <h2>Envíanos un Mensaje</h2>
+            <form action="#" method="POST" class="contact-form">
+                <div class="form-group">
+                    <label for="name">Tu Nombre</label>
+                    <input type="text" id="name" name="name" placeholder="Ej. Juan Pérez" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Tu Correo Electrónico</label>
+                    <input type="email" id="email" name="email" placeholder="juan@ejemplo.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="service">Servicio de interés</label>
+                    <select id="service" name="service">
+                        <option value="web">Página Web</option>
+                        <option value="chatbot">Automatización / WhatsApp</option>
+                        <option value="ia">Inteligencia Artificial</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Mensaje</label>
+                    <textarea id="message" name="message" rows="4" placeholder="Cuéntanos brevemente qué necesitas..." required></textarea>
+                </div>
+                <button type="submit" class="btn-primary-form">Enviar Solicitud</button>
+            </form>
+        </div>
+    </section>
+
+    <script>
+        ScrollReveal().reveal('.reveal', {
+            distance: '30px',
+            duration: 800,
+            interval: 100,
+            origin: 'bottom'
+        });
+    </script>
+</body>
+</html>
